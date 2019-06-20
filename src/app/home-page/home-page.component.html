@@ -1,0 +1,7 @@
+<button (click)="onClickAddEmployee()">Add Employee</button>
+
+<button (click)="onClickGetEmployees()">Get Employees</button>
+
+<app-display-employees *ngIf="dispEmployeeComp == true"></app-display-employees>
+
+<app-add-employee *ngIf="addEmployeeComp == true"></app-add-employee>
