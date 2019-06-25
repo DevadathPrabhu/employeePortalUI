@@ -26,7 +26,7 @@ export class HomePageComponent implements OnInit {
   }
 
   /**
-   * Toggles the component display form to display the employee details
+   * Toggles the component display flag to display the employee details
    */
   onClickGetEmployees(){
 

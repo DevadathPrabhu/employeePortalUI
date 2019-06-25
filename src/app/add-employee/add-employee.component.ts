@@ -15,7 +15,7 @@ export class AddEmployeeComponent implements OnInit {
   message: string = '';
   errorLabel: string = 'Error:';
 
-  constructor(private employeeService : EmployeeService) { }
+  constructor(public employeeService : EmployeeService) { }
 
   ngOnInit() {
     this.employee = new Employee();
@@ -54,7 +54,7 @@ export class AddEmployeeComponent implements OnInit {
   /**
    * Returns the employee JSON with details filled in form
    */
-  private getEmployeeDetails() : any {
+  getEmployeeDetails() : any {
     return {
       "Id":this.employee.id,
       "FName":this.employee.fName,

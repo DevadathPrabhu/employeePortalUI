@@ -14,4 +14,13 @@ describe('EmployeeService', () => {
   it('should be created', inject([EmployeeService], (service: EmployeeService) => {
     expect(service).toBeTruthy();
   }));
+
+  // it('should call getEmployees()', () => {
+
+  // });
+
+  // it('should call addEmployee()', () => {
+
+  // });
+
 });

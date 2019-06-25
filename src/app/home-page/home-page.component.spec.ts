@@ -29,4 +29,19 @@ describe('HomePageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should call onClickAddEmployee', () => {
+    spyOn(component, "onClickAddEmployee").and.callThrough();
+    component.onClickAddEmployee();
+    expect(component.addEmployeeComp).toBeTruthy();
+    expect(component.dispEmployeeComp).toBeFalsy();
+  });
+
+  it('should call onClickGetEmployees', () => {
+    spyOn(component, "onClickGetEmployees").and.callThrough();
+    component.onClickGetEmployees();
+    expect(component.dispEmployeeComp).toBeTruthy();
+    expect(component.addEmployeeComp).toBeFalsy();
+  });
+
 });
