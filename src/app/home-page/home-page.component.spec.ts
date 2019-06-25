@@ -1,6 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomePageComponent } from './home-page.component';
+import { FormsModule } from '@angular/forms';
+import { EmployeeService } from '../employee.service';
+import { DisplayEmployeesComponent } from '../display-employees/display-employees.component';
+import { AddEmployeeComponent } from '../add-employee/add-employee.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('HomePageComponent', () => {
   let component: HomePageComponent;
@@ -8,7 +13,9 @@ describe('HomePageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomePageComponent ]
+      declarations: [ HomePageComponent, AddEmployeeComponent, DisplayEmployeesComponent ],
+      imports: [ FormsModule, HttpClientModule ],
+      providers: [ EmployeeService ]
     })
     .compileComponents();
   }));
