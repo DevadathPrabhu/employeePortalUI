@@ -13,9 +13,11 @@ export class HomePageComponent implements OnInit {
 
   constructor(private employeeService : EmployeeService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
+  /**
+   * Toggles the component display flag to display add employee form
+   */
   onClickAddEmployee(){
 
     this.addEmployeeComp = true;
@@ -23,6 +25,9 @@ export class HomePageComponent implements OnInit {
 
   }
 
+  /**
+   * Toggles the component display form to display the employee details
+   */
   onClickGetEmployees(){
 
     this.addEmployeeComp = false;

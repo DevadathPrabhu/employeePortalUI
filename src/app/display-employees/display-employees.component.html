@@ -1,14 +1,13 @@
+<div *ngIf="error == false && employeeList.length > 0"> 
 <table>
-  
   <tr *ngFor="let employee of employeeList">
-    
     <td>{{ employee.Id }}</td>
     <td>{{ employee.FName }}</td>
     <td>{{ employee.LName }}</td>
     <td>{{ employee.Dob }}</td>
     <td>{{ employee.Gender }}</td>
     <td>{{ employee.Department }}</td>
-  
   </tr>
-
 </table>
+</div>
+<div *ngIf="error == true"> {{ errorMsg }} </div>

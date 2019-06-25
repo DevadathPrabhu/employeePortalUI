@@ -9,17 +9,32 @@ import { EmployeeService } from '../employee.service';
 export class DisplayEmployeesComponent implements OnInit {
 
   employeeList = [];
+  error: boolean = false;
+  errorMsg: string = 'Error';
 
   constructor(private employeeService : EmployeeService) { }
 
   ngOnInit() {
-    this.onClickGetEmployees();
+    this.getEmployees();
   }
 
-  onClickGetEmployees(){
+  /**
+   * Invokes getEmployees() in the service to fetch the employee details
+   */
+  getEmployees(){
 
-    this.employeeList = this.employeeService.getEmployees()
-      .subscribe(employees => this.employeeList = employees);
+    this.employeeService.getEmployees()
+      .subscribe((response) => {
+        console.log('displayEmployees - getEmployees() - Result:', response.body);
+        this.employeeList = response.body;
+        this.error = false;
+      }, (error) => {
+        console.log('displayEmployees - getEmployees() - Error:', error);
+        this.error = true;
+        this.errorMsg = "Error: \n" + 
+            (error.error?(error.error.error + " - "):"") +
+            (error.error?error.error.message:"Fetching employees failed!");
+      });
 
   }
 
