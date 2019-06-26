@@ -1,6 +1,6 @@
 <div class="buttons">
-    <button class="add-emp-button" (click)="onClickAddEmployee()">Add Employee</button>
-    <button class="get-emp-button" (click)="onClickGetEmployees()">Get Employees</button>
+    <button class="add-emp-button" (click)="onClickAddEmployee()">{{addEmployeeLabel}}</button>
+    <button class="get-emp-button" (click)="onClickGetEmployees()">{{getEmployeeLabel}}</button>
 </div>
 
 <app-display-employees class="get-emp-comp" *ngIf="dispEmployeeComp == true"></app-display-employees>

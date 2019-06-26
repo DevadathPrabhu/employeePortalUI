@@ -10,6 +10,8 @@ export class HomePageComponent implements OnInit {
 
   dispEmployeeComp: boolean = false;
   addEmployeeComp: boolean = false;
+  addEmployeeLabel: string = 'Add Employee';
+  getEmployeeLabel: string = 'Get Employees';
 
   constructor(private employeeService : EmployeeService) { }
 
