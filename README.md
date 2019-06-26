@@ -1,3 +1,23 @@
+This project consists of frontend for the employee portal.
+It comsists of simple form wherein user can save the employee details and retrieve the same.
+
+Backend project is available here - https://github.com/DevadathPrabhu/employeePortal
+
+Technologies used: Angular, TypeScript, HTML, CSS, Karma, Jasmine
+
+Setting up the project:
+Pre-requisits- Node.js and angular-cli
+
+Steps to start the application-
+1. Clone the project
+2. Open the terminal and move to the project folder. Command: cd {project_path}/employeePortalUI
+3. Start the application using 'ng serve'
+4. Access the application in browser using http://localhost:4200/
+
+
+===============================================================================
+
+
 # EmployeePortal
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.8.
