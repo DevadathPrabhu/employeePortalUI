@@ -1,0 +1,32 @@
+.disp-emp-content{
+    text-align: justify;
+    display: inline-block;
+    margin-top: 2%;
+    padding: 2%;
+}
+
+.emp-table{
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: justify;
+    display: inline-block;
+    padding: 2%;
+}
+
+th, td{
+    border: 1px solid black;
+    text-align: center;
+    width: 10%;
+    padding: 2%;
+    font-size: 18px;
+}
+
+.error-msg{
+    color: red;
+    font-size: 20px;
+}

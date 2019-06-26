@@ -1,7 +1,8 @@
-<button (click)="onClickAddEmployee()">Add Employee</button>
+<div class="buttons">
+    <button class="add-emp-button" (click)="onClickAddEmployee()">Add Employee</button>
+    <button class="get-emp-button" (click)="onClickGetEmployees()">Get Employees</button>
+</div>
 
-<button (click)="onClickGetEmployees()">Get Employees</button>
+<app-display-employees class="get-emp-comp" *ngIf="dispEmployeeComp == true"></app-display-employees>
 
-<app-display-employees *ngIf="dispEmployeeComp == true"></app-display-employees>
-
-<app-add-employee *ngIf="addEmployeeComp == true"></app-add-employee>
+<app-add-employee class="add-emp-comp" *ngIf="addEmployeeComp == true"></app-add-employee>

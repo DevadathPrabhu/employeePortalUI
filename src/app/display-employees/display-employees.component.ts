@@ -11,6 +11,12 @@ export class DisplayEmployeesComponent implements OnInit {
   employeeList = [];
   error: boolean = false;
   errorMsg: string = 'Error';
+  empIdLabel: string = 'Employee ID';
+  empFNameLabel: string = 'First Name';
+  empLNameLabel: string = 'Last Name';
+  empDOBLabel: string = 'DOB';
+  empGenderLabel: string = 'Gender';
+  empDeptLabel: string = 'Department';
 
   constructor(private employeeService : EmployeeService) { }
 

@@ -14,6 +14,13 @@ export class AddEmployeeComponent implements OnInit {
   error: boolean = false;
   message: string = '';
   errorLabel: string = 'Error:';
+  empIdLabel: string = 'Employee ID';
+  empFNameLabel: string = 'First Name';
+  empLNameLabel: string = 'Last Name';
+  empDOBLabel: string = 'Date of birth';
+  empGenderLabel: string = 'Gender';
+  empDeptLabel: string = 'Department';
+  submitLabel: string = 'Submit';
 
   constructor(public employeeService : EmployeeService) { }
 
@@ -27,28 +34,47 @@ export class AddEmployeeComponent implements OnInit {
    */
   onSubmit(){
 
-    var employeeDetails = this.getEmployeeDetails();
+    var validDetails: boolean = this.validateEmployeeDetails();
 
-    console.log("addEmployee - onSubmit() - Employee details filled in the form: ", employeeDetails);
-    console.log('addEmployee - onSubmit() - Current employee list', this.employeeList);
+    if(validDetails){
+      var employeeDetails = this.getEmployeeDetails();
 
-    this.employeeService.addEmployee(employeeDetails).subscribe(
-      (response) => {
-        this.employeeList.push(response.body);
-        this.error = false;
-        this.message = 'Employee saved successfully!';
-        console.log('addEmployee - onSubmit() - Employee added', response.body);
-        console.log('addEmployee - onSubmit() - Updated employee list', this.employeeList);
-      },
-      (error) => {
-        console.log('addEmployee - onSubmit() - Error : ', error);
-        this.error = true;
-        this.message = error.error?error.error.message:'Adding employee failed :(';
-      }
-    );
+      console.log("addEmployee - onSubmit() - Employee details filled in the form: ", employeeDetails);
+      console.log('addEmployee - onSubmit() - Current employee list', this.employeeList);
 
-    this.employee = this.clearEmployee(this.employee);
+      this.employeeService.addEmployee(employeeDetails).subscribe(
+        (response) => {
+          this.employeeList.push(response.body);
+          this.error = false;
+          this.message = 'Employee saved successfully!';
+          console.log('addEmployee - onSubmit() - Employee added', response.body);
+          console.log('addEmployee - onSubmit() - Updated employee list', this.employeeList);
+        },
+        (error) => {
+          console.log('addEmployee - onSubmit() - Error : ', error);
+          this.error = true;
+          this.message = error.error?error.error.message:'Adding employee failed :(';
+        }
+      );
+    }
 
+    if(!this.error)
+      this.employee = this.clearEmployee(this.employee);
+
+  }
+
+  validateEmployeeDetails():boolean{
+    if(this.employee.id === undefined || this.employee.id == null || this.employee.id <= 0){
+      this.error = true;
+      this.message = 'Employee Id is mandatory and must be >= 1';
+      return false;
+    }
+    else if(this.employee.fName == null){
+      this.error = true;
+      this.message = 'First Name is mandatory!';
+      return false;
+    }
+    return true;
   }
 
   /**

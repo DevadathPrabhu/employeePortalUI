@@ -1,0 +1,54 @@
+.buttons{
+    display: block;
+    margin-top: 3%;
+    text-align: center;
+    width: 100%;
+}
+
+.add-emp-button{
+    letter-spacing: normal !important;
+    margin: auto;
+    width: 15%;
+    height: 15%;
+    transition-duration: 0.4s;
+    border-color: darkslategray;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.get-emp-button{
+    letter-spacing: normal !important;
+    margin: auto;
+    width: 15%;
+    height: 15%;
+    transition-duration: 0.4s;
+    border-color: darkslategray;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.add-emp-button:hover {
+    background-color: gray;
+    color: white;
+}
+
+.get-emp-button:hover {
+    background-color: gray;
+    color: white;
+}
+
+.add-emp-comp{
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+}
+
+.get-emp-comp{
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+}

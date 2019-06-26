@@ -1,13 +1,26 @@
-<div *ngIf="error == false && employeeList.length > 0"> 
-<table>
-  <tr *ngFor="let employee of employeeList">
-    <td>{{ employee.Id }}</td>
-    <td>{{ employee.FName }}</td>
-    <td>{{ employee.LName }}</td>
-    <td>{{ employee.Dob }}</td>
-    <td>{{ employee.Gender }}</td>
-    <td>{{ employee.Department }}</td>
-  </tr>
-</table>
+<div class="disp-emp-content">
+
+  <div class="emp-table" *ngIf="error == false && employeeList.length > 0"> 
+    <table>
+      <tr>
+        <th>{{empIdLabel}}</th>
+        <th>{{empFNameLabel}}</th>
+        <th>{{empLNameLabel}}</th>
+        <th>{{empDOBLabel}}</th>
+        <th>{{empGenderLabel}}</th>
+        <th>{{empDeptLabel}}</th>
+      </tr>
+      <tr *ngFor="let employee of employeeList">
+        <td>{{ employee.Id }}</td>
+        <td>{{ employee.FName }}</td>
+        <td>{{ employee.LName }}</td>
+        <td>{{ employee.Dob }}</td>
+        <td>{{ employee.Gender }}</td>
+        <td>{{ employee.Department }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="error-msg" *ngIf="error == true"> {{ errorMsg }} </div>
+
 </div>
-<div *ngIf="error == true"> {{ errorMsg }} </div>
